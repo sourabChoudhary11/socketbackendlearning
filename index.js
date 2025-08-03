@@ -42,6 +42,6 @@ io.on('connection', (socket) => {
     socket.to(room).emit('user_joined', `${socket.id} joined room: ${room}`);
   });
 });
-server.listen(8080, () => {
-  console.log('listening on *:8080');
+server.listen(process.env.PORT, () => {
+  console.log('Server is running on port', process.env.PORT);
 });
